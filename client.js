@@ -41,7 +41,7 @@ function bonusPercentageProperty(employee) {
   } else if (employee.reviewRating === 5) {
     employee.bonusPercentage = .1;
   }
-  if (employee.employeeNumber.length > 4) {
+  if (employee.employeeNumber.length === 4) {
     employee.bonusPercentage += .05;
   }
   if (parseInt(employee.annualSalary) > 65000) {
@@ -75,7 +75,7 @@ function controller() {
 function addToDom() {
   console.log('hello');
   for (let y = 0; y < result.length; y++) {
-    $('#employeeOutput').append('<p>' + Object.values(result[y]) + '</p>');
+    $('#employeeOutput').append('<p>' +  'Name: ' + result[y].name + '</p>' + '<p>' + "Employee Number: " + result[y].employeeNumber + '</p>' + '<p>' + "Annual Salary: $" + result[y].annualSalary + '<p>' + 'Review Rating: ' + result[y].reviewRating + '</p>' + '<p>' + 'Bonus Percentage: %' + result[y].bonusPercentage + '</p>' + '<p>' + 'Total Bonus: $' + result[y].totalBonus + '</p>' + '<p>' + 'Total Compensation: $' + result[y].totalCompensation + '</p>' + '<br>');
   }
 
 }
@@ -92,6 +92,24 @@ function iterateOverEmployees() {
 }
 
 let result = iterateOverEmployees();
+
+var getRandomNumber = function(min, max) {
+  var result = Math.floor(Math.random() * (max - min)) + min;
+  return result.toString();
+};
+
+var getRandomOrientation = function() {
+  var arrayOfOrientations = ['scaleX(-1)','scaleY(1.5)', 'scewY(20deg)', 'scewY(90deg)',
+  'scewX(45deg)', 'scewX(76deg)', 'rotate(20deg)', 'rotate(45deg)', 'rotate(76deg)', 'rotate(145deg)'];
+  return arrayOfOrientations[getRandomNumber(0, arrayOfOrientations.length)];
+}
+
+var getRandomFilter = function() {
+  var arrayOfFilters = ['grayScale(100%)', 'blur5px', 'brightness(200%)',
+  'contrast(200%)', 'hue-rotate(90deg)', 'invert(100%)', 'saturate(8)', 'sepia(100%)']
+  return arrayOfFilters[getRandomNumber(0, arrayOfFilters.length)];
+};
+
 
 
 

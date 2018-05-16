@@ -5,14 +5,36 @@
     <title>Bonus Calculator Object Challenge</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styleSheet.css">
+    <script type="text/javascript">
+    $(function() {
+      $("#funTime").on('click', function() {
+        $('img').attr('width', getRandomNumber(350,600));
+        $('img').css('transform', getRandomOrientation());
+        $('img').css('filter', getRandomFilter());
+        console.log('Oh NO! Robert\'s coming!');
+      })
+    })
+  </script>
+
 
 
   </head>
   <body>
+
     <h1>Bonus Calculator Object Challenge</h1>
+    <h2></h2>
     <div id="employeeOutput">
 
     </div>
     <button id="controller">Run Our Employee Data Generator!</button>
+    <button id="funTime">What does this do??</button>
+
+    <div id="calculatorDIV">
+      <img id="calculator" src="https://m.media-amazon.com/images/S/aplus-media/mg/a48e575c-d047-4ba5-89b0-1c8977511564.png">
+    </div>
+    <div id="villainDIV">
+      <img id= "villain" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Villianc_transparent_background.svg">
+    </div>
   </body>
 </html>

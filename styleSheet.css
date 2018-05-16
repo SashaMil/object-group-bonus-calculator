@@ -1,0 +1,25 @@
+#calculator {
+  height: 300px;
+  width: 300px;
+
+}
+
+#calculatorDIV {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 300px;
+
+}
+
+#villain {
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  bottom: 100px;
+  left: 300px;
+}
+
+#villainDIV {
+  text-align: : center;
+}
